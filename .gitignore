@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.vo
+*.vok
+*.vos
+*.glob
+.*.aux
+/checkpoints/
+/runs/
+/data/
+*.egg-info/
+.pytest_cache/

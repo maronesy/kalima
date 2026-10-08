@@ -1,0 +1,17 @@
+[project]
+name = "kalima"
+version = "0.1.0"
+description = "Kalima: a neural-symbolic prover that divides goals into subgoals for automated provers (HTPS-style), checked by Rocq"
+requires-python = ">=3.10"
+dependencies = ["pexpect", "pyyaml", "z3-solver"]
+
+[project.optional-dependencies]
+train = ["torch>=2.4", "transformers>=4.46", "peft>=0.13", "trl>=0.12", "datasets", "accelerate"]
+serve = ["vllm>=0.6"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["kalima*"]

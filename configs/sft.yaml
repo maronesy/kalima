@@ -1,0 +1,13 @@
+# Stage 1: supervised fine-tuning of the subgoal model (docs/TRAINING_PLAN.md).
+# Base model: a 7-8B open prover. CHECK THE LICENSE before release (docs/TRAINING_PLAN.md, "Base model").
+base_model: Goedel-LM/Goedel-Prover-V2-8B      # alternative: deepseek-ai/DeepSeek-Prover-V2-7B
+train_file: data/sft/train.jsonl
+valid_file: data/sft/valid.jsonl
+output_dir: checkpoints/kalima-sft
+lora_r: 64
+lora_alpha: 128
+lr: 1.0e-4
+epochs: 2
+batch_size: 4
+grad_accum: 8
+max_length: 4096

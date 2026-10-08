@@ -1,0 +1,9 @@
+# Stage 3: reinforcement learning with the provers as judge (kalima/train/reward.py).
+init_from: checkpoints/kalima-sft
+algorithm: grpo              # group-relative policy optimisation (TRL GRPOTrainer)
+group_size: 8                # completions sampled per goal
+lr: 5.0e-6
+kl_coef: 0.02
+max_new_tokens: 1024
+reward_workers: 32           # parallel Rocq checks per step
+problems: data/rl/goals.jsonl
