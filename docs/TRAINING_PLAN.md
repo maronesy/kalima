@@ -15,7 +15,7 @@ benchmark is never used for training (see `HOLDOUT.md`).
 | Proposer | Kalam-20, subgoals only |
 |---|---|
 | None (provers alone) | 10 of 20 |
-| Claude Sonnet 5.5, no further training (runs 3–5) | 16, 19, 19 of 20 |
+| Claude Sonnet 5.5, no further training (runs 3–6) | 16, 19, 19, 20 of 20 (run 6: the provers of this repository) |
 | Qwen2.5-Coder-0.5B, our fine-tune (tactic search, not subgoals only) | 10 of 20 |
 
 ## Base model

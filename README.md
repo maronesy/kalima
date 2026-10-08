@@ -23,7 +23,7 @@ Early. The search, the provers and the benchmark work. The project's own subgoal
 | Proposer | Kalam-20, model states subgoals only |
 |---|---|
 | None (provers alone) | 10 of 20 |
-| Claude Sonnet 5.5, no further training | 16, 19, 19 of 20 in three runs |
+| Claude Sonnet 5.5, no further training | 16, 19, 19, **20** of 20 in four runs (the last with the final provers) |
 | Kalima's own model | not trained yet |
 
 ## Layout
