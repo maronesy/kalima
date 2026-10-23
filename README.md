@@ -128,5 +128,6 @@ tests/                prover and hold-out tests
 
 ## License
 
-[Apache 2.0](LICENSE). Model weights released by this project will state the license of the
-base model they derive from.
+Kalima is **free and open-source software**, released under the [Apache 2.0](LICENSE) license —
+free to use, modify, and distribute, including commercially, with an explicit patent grant.
+Model weights released by this project will state the license of the base model they derive from.
