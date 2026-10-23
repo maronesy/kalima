@@ -16,8 +16,7 @@ Kalima is developed at the [al-Kalam Institute](https://alkalam.org) for **algor
 theology**: testing classical arguments of Islamic theology by machine. Its benchmark,
 **Kalam-20**, is the twenty steps of two arguments for a first cause — *dalīl al-kalima* and
 *dalīl al-imkān* ([`benchmarks/kalam20/`](benchmarks/kalam20/)). Results, proofs, and
-interactive search replays are published at
-**[at.alkalam.org](https://at.alkalam.org/static/research/neural-symbolic-prover/index.html)**.
+interactive search replays are published at **[at.alkalam.org/kalima](https://at.alkalam.org/kalima)**.
 
 ---
 
@@ -58,14 +57,28 @@ full account and the fixed prover list.
 
 ## Status
 
-**Early.** The search, the provers, and the benchmark work. The project's own subgoal model
-(a fine-tuned prover) is **not trained yet** — see [`docs/TRAINING_PLAN.md`](docs/TRAINING_PLAN.md).
+**Early, and the results are real.** The search, the provers, and the benchmark all work.
+Kalima has run in two versions, and a third is in training:
 
-| Proposer | Kalam-20 (model states subgoals only) |
+1. **Version 1 — our own model.** A small code model, **Qwen2.5-Coder-0.5B**, that we
+   fine-tuned for the task (LoRA + expert iteration, on a laptop). It works — it even proved
+   one step the symbolic tools alone could not — but overall it lands about at the level of
+   the provers alone.
+2. **Version 2 — Claude, as released.** **Claude Sonnet 5.5**, with no training of any kind,
+   as the proposer. It needed no training and got the furthest: it proved **all 20** steps in
+   a single run (and again in a second). Restricted to *only* stating subgoals, it proved 16
+   of 20. It is the current default proposer.
+3. **Next — a bigger model of our own.** We are training a **7–8B** prover model to do the
+   proposing in-house and close the gap to Claude — see [`docs/TRAINING_PLAN.md`](docs/TRAINING_PLAN.md).
+
+| Proposer | Kalam-20 (subgoals only) |
 |---|---|
 | None (provers alone) | 10 / 20 |
-| Claude Sonnet 5.5, no further training | 16, 19, 19, **20** / 20 across four runs (the last with the final provers) |
-| Kalima's own model | not trained yet |
+| **V1** — our Qwen2.5-Coder-0.5B fine-tune | ≈ 10 / 20 (about the level of the provers) |
+| **V2** — Claude Sonnet 5.5, no training | 16, 19, 19, **20** / 20 across runs (also **20 / 20** when allowed to write proofs) |
+| **V3** — our own 7–8B prover | in training |
+
+Full results, the proofs, and interactive search replays: **[at.alkalam.org/kalima](https://at.alkalam.org/kalima)**.
 
 ## Install
 
